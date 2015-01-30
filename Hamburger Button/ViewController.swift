@@ -9,10 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet var button: HamburgerButton
+    @IBOutlet var button: HamburgerButton?
 
     @IBAction func toggle(sender: AnyObject!) {
-        self.button.showsMenu = !self.button.showsMenu
+        if let unwrappedButton = button {
+            unwrappedButton.showsMenu = !unwrappedButton.showsMenu
+        }
     }
 }
 
